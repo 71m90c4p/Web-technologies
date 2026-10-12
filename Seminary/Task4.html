@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed, Relative, Absolute</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #f5efe6;
+            color: #2b2b2b;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.5;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #2b2b2b;
+            margin-bottom: 40px;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            background-color: #fff;
+            border: 2px solid #2b2b2b;
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0,0, 0.08);
+        }
+
+            section h2 {
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-size: 22px;
+                color: #2b2b2b;
+            }
+
+            section > p {
+                font-style: italic;
+                color: #555;
+                margin-bottom: 25px;
+                font-size: 15px;
+            }
+
+
+        .fixed-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #8b0000, #c62828);
+            color: #ffd700;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 2px solid #ffd700;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+            z-index: 1000;
+        }
+
+            .fixed-box strong {
+                display: block;
+                font-size: 18px;
+                margin-bottom: 4px;
+            }
+
+
+        .relative-area {
+            position: relative;
+            padding: 20px;
+            border: 2px dashed #999;
+            border-radius: 10px;
+            min-height: 380px;
+            background-color: #fafafa;
+        }
+
+        .card {
+            width: 220px;
+            padding: 14px 16px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+            .card strong {
+                display: block;
+                font-size: 16px;
+                margin-bottom: 4px;
+            }
+
+            .card p {
+                margin: 0;
+                font-size: 13px;
+            }
+
+        .rel-card-1,
+        .rel-card-2 {
+            background-color: #1d3557;
+            color: #fff;
+        }
+
+        .rel-card-3 {
+            background-color: #b0762c;
+            color: #fff;
+            position: relative;
+            top: 20px;
+            left: 60px;
+        }
+
+        .rel-card-4 {
+            background-color: #b0762c;
+            color: #fff;
+            position: relative;
+            top: 10px;
+            left: 30px;
+        }
+
+
+        .absolute-area {
+            position: relative;
+            height: 380px;
+            background-color: #d6e8d6;
+            border: 2px solid #2e7d32;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .abs-card {
+            position: absolute;
+            width: 200px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            color: #fff;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+            font-size: 14px;
+        }
+
+            .abs-card strong {
+                display: block;
+                font-size: 15px;
+                margin-bottom: 4px;
+            }
+
+            .abs-card p {
+                margin: 0;
+                font-size: 13px;
+            }
+
+        .abs-card-1 {
+            background-color: #1b5e20;
+            top: 60px;
+            left: 40px;
+            z-index: 1;
+        }
+
+        .abs-card-2 {
+            background-color: #2e7d32;
+            top: 90px;
+            left: 120px;
+            z-index: 2;
+        }
+
+        .abs-card-3 {
+            background-color: #43a047;
+            top: 120px;
+            left: 200px;
+            z-index: 10;
+        }
+
+        .abs-card-4 {
+            background-color: #9e9e9e;
+            top: 170px;
+            left: 300px;
+            z-index: 3;
+        }
+
+
+        .corners-area {
+            position: relative;
+            height: 360px;
+            background: linear-gradient(135deg, #fdf6ec, #f0e2c9);
+            border: 2px dashed #b0762c;
+            border-radius: 10px;
+        }
+
+        .corner-card {
+            position: absolute;
+            width: 160px;
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .corner-tl {
+            top: 15px;
+            left: 15px;
+            background-color: #f4a820;
+            color: #2b2b2b;
+        }
+
+        .corner-tr {
+            top: 15px;
+            right: 15px;
+            background-color: #e0a020;
+            color: #2b2b2b;
+        }
+
+        .corner-bl {
+            bottom: 15px;
+            left: 15px;
+            background-color: #5a3a1c;
+        }
+
+        .corner-br {
+            bottom: 15px;
+            right: 15px;
+            background-color: #4a2e14;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fixed, Relative, Absolute</h1>
+    <div class="fixed-box">
+        <strong>Fixed</strong>
+        Учимся позиционировать элементы
+    </div>
+    <section>
+        <h2>Часть 1. position: fixed</h2>
+        <p>
+            Тёмно-красное сообщение «Учимся позиционировать элементы» с золотой полоской
+            закреплено в правом верхнем углу окна. Оно не двигается при прокрутке —
+            это ключевое отличие fixed от absolute.
+        </p>
+        <p>
+            Свойства: <code>position: fixed; top: 20px; right: 20px;</code>.
+            Fixed позиционируется относительно окна браузера, а не родителя.
+        </p>
+    </section>
+    <section>
+        <h2>Часть 2. position: relative</h2>
+        <p>
+            Первые две карточки (синие) — без отступов, стоят в обычном потоке.
+            Вторые две (бронзовые) — со сдвигом через top/left. Место в потоке
+            за ними сохраняется, поэтому карточка №3 не «подъезжает» к №2.
+        </p>
+        <div class="relative-area">
+            <div class="card rel-card-1">
+                <strong>Карточка 1</strong>
+                <p>relative: без отступов</p>
+            </div>
+
+            <div class="card rel-card-2">
+                <strong>Карточка 2</strong>
+                <p>relative: без отступов</p>
+            </div>
+
+            <div class="card rel-card-3">
+                <strong>Карточка 3</strong>
+                <p>top: 20px; left: 60px;</p>
+            </div>
+
+            <div class="card rel-card-4">
+                <strong>Карточка 4</strong>
+                <p>top: 10px; left: 30px;</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Часть 3. position: absolute — перекрытие</h2>
+        <p>
+            Все карточки вырваны из потока и позиционируются относительно зелёного
+            блока (у него position: relative). <strong>Карточка №3 — верхняя</strong>:
+            у неё z-index: 10, поэтому она перекрывает остальные.
+        </p>
+
+        <div class="absolute-area">
+            <div class="abs-card abs-card-1">
+                <strong>Карточка 1</strong>
+                <p>z-index: 1</p>
+            </div>
+
+            <div class="abs-card abs-card-2">
+                <strong>Карточка 2</strong>
+                <p>z-index: 2</p>
+            </div>
+
+            <div class="abs-card abs-card-3">
+                <strong>Карточка 3</strong>
+                <p>z-index: 10 + верхняя</p>
+            </div>
+
+            <div class="abs-card abs-card-4">
+                <strong>Карточка 4</strong>
+                <p>z-index: 3</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Часть 4. Карточки по углам</h2>
+        <p>
+            Каждая карточка прижата к своему углу. Используются пары свойств:
+            top/left для верхних, bottom/right для нижних. Родитель
+            .corners-area имеет position: relative.
+        </p>
+
+        <div class="corners-area">
+            <div class="corner-card corner-tl">
+                <strong>Левый верхний</strong><br />
+                top: 15px; left: 15px;
+            </div>
+
+            <div class="corner-card corner-tr">
+                <strong>Правый верхний</strong><br />
+                top: 15px; right: 15px;
+            </div>
+
+            <div class="corner-card corner-bl">
+                <strong>Левый нижний</strong><br />
+                bottom: 15px; left: 15px;
+            </div>
+
+            <div class="corner-card corner-br">
+                <strong>Правый нижний</strong><br />
+                bottom: 15px; right: 15px;
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
