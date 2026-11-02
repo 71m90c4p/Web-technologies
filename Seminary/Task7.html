@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Графический редактор Canvas</title>
+    <link rel="stylesheet" href="style7.css" />
+</head>
+<body>
+    <h1>Рисовалка на Canvas</h1>
+    <div class="toolbar">
+        <div class="tool">
+            <label for="colorPicker">Цвет:</label>
+            <input type="color" id="colorPicker" value="#000000" />
+        </div>
+        <div class="tool">
+            <label for="thickness">Толщина:</label>
+            <input type="range" id="thickness" min="1" max="30" value="3" />
+            <span class="thickness-value" id="thicknessValue">3</span>
+        </div>
+        <div class="tool tools-group">
+            <button class="tool-btn active" id="brushBtn" data-tool="brush">Кисть</button>
+            <button class="tool-btn" id="eraserBtn" data-tool="eraser">Ластик</button>
+            <button class="tool-btn" id="rectBtn" data-tool="rect">Прямоугольник</button>
+            <button class="tool-btn" id="circleBtn" data-tool="circle">Круг</button>
+        </div>
+        <div class="actions-group">
+            <button class="btn-clear" id="clearBtn">Очистить</button>
+            <button class="btn-save" id="saveBtn">Сохранить</button>
+        </div>
+    </div>
+    <div class="canvas-wrapper">
+        <canvas id="canvas" width="800" height="500"></canvas>
+    </div>
+    <script src="Script7.js"></script>
+</body>
+</html>
